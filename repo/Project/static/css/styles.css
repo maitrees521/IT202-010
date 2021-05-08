@@ -1,4 +1,3 @@
-/* design intentionally made horrible to see who doesn't change it*/
 body {
     font-family: system;
     font-size: 1em;
@@ -6,8 +5,8 @@ body {
 
 ul[class="nav"]{
     list-style-type: none;
-    margin: 1;
-    padding: 1;
+    margin: 2;
+    padding: 2;
     overflow: hidden;
     background-color: #65026e;
 }
