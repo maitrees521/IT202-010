@@ -6,7 +6,7 @@ if (!has_role("Admin")) {
     die(header("Location: login.php"));
 ?>
 <?php
-//we'll put this at the top so both php block have access to it
+
 if (isset($_GET["id"])) {
     $id = $_GET["id"];
 }
