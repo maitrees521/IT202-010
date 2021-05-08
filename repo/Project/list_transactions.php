@@ -3,7 +3,7 @@
 if (!has_role("Admin")) {
     //this will redirect to login and kill the rest of this script (prevent it from executing)
     flash("You don't have permission to access this page");
-    die(header("Location: " . getURL("login.php")));
+    die(header("Location: login. php"));
 }
 ?>
 <?php
@@ -12,11 +12,9 @@ $results = [];
 $results2 = [];
 if (isset($_POST["query"])) {
     $query = $_POST["query"];
-}
-?>
 
-<?php
-if (isset($_POST["search"]) && !empty($query)) {
+
+
     $db = getDB();
     $stmt=$db->prepare("SELECT id as acc_id FROM Accounts WHERE account_number like :q");
         $r = $stmt->execute([":q" => "%$query%"]);
@@ -77,8 +75,8 @@ if (isset($_POST["search"]) && !empty($query)) {
                         <div><?php safer_echo($r["tranID"]); ?></div>
                     </div>
                     <div>
-                        <a type="button" href="test_edit_transactions.php?id=<?php safer_echo($r['tranID']); ?>">Edit</a>
-                        <a type="button" href="test_view_transactions.php?id=<?php safer_echo($r['tranID']); ?>">View</a>
+                        <a type="button" href="edit_transactions.php?id=<?php safer_echo($r['tranID']); ?>">Edit</a>
+                        <a type="button" href="view_transactions.php?id=<?php safer_echo($r['tranID']); ?>">View</a>
                     </div>
                 </div>
             <?php endforeach; ?>
