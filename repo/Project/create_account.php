@@ -3,8 +3,8 @@
   if (!has_role("Admin")) {
     //this will redirect to login and kill the rest of this script (prevent it from executing)
     flash("You don't have permission to access this page");
-    die(header("Location: " . getURL("login.php")));
-  }
+    die(header("Location: login.php"));  
+}
 ?>
 
 <form method="POST">
@@ -16,9 +16,10 @@
     <option value =  "saving">saving</option>
     <option value = "loan">loan</option>
     <option value = "world">world</option>
+   
   </select>
   <label>Balance</label>
-  <input type="number" min="5.00" name="balance" value="<?php echo $result["balance"];?>" />
+  <input type="number" min="10.00" name="balance" value="<?php echo $result["balance"];?>" />
 	<input type="submit" name="save" value="Create"/>
 </form>
 
