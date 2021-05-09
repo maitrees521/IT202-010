@@ -1,21 +1,19 @@
 <?php require_once(__DIR__ . "/partials/nav.php"); ?>
 <?php
 if (!has_role("Admin")) {
-  //this will redirect to login and kill the rest of this script (prevent it from executing)
   flash("You don't have permission to access this page");
   die(header("Location: login.php"));
 }
 ?>
 <?php
-//we'll put this at the top so both php block have access to it
   if(isset($_GET["id"])){
     $id = $_GET["id"];
   }
 ?>
 <?php
 if(isset($_POST["save"])){
-      $account_number = $_POST["account_number"]; //not added to form 
-      $account_type = $_POST["account_type"]; //not added to form 
+      $account_number = $_POST["account_number"]; 
+      $account_type = $_POST["account_type"]; 
       $balance = $_POST["balance"];
       $db = getDB();
       $user = get_user_id();
