@@ -25,6 +25,7 @@ $accounts = getDropDown();
                     document.getElementById('transfer').disabled = true; 
                 }
             }
+           
         </script> 
         <div id="transfer" disabled>
             <label>Destination Account </label>
