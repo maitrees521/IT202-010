@@ -3,17 +3,9 @@
 ini_set('display_errors',1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-//pull in db.php so we can access the variables from it
 require_once (__DIR__ . "/../lib/db.php");
 $count = 0;
 try{
-    //name each sql file in a way that it'll sort correctly to run in the correct order
-    //my samples prefix filenames with #_
-    /***
-     * Finds all .sql files in structure directory.
-     * Generates an array keyed by filename and valued as raw SQL from file
-     * The .sql is important here since this directory may have other files types
-     */
     foreach(glob(__DIR__ . "/*.sql") as $filename){
         $sql[$filename] = file_get_contents($filename);
     }
